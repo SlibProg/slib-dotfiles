@@ -1,0 +1,199 @@
+import api.linux
+import api.wifi
+import core.command
+
+Script {
+    every = "10s"
+
+    run = |w| {
+        let bat = linux.get_battery_perc()
+        w.find("bat_label").set_property("text", " " + bat.to_string() + "%")
+    }
+}
+
+Poll "clock" {
+  initial = "initial value"
+  interval = "5s"
+  cmd = "date +%H:%M"
+}
+
+Poll "music" {
+  initial = "No music"
+  interval = "2s"
+  cmd = "playerctl metadata title"
+}
+
+Poll "bright" {
+  initial = "initial value"
+  interval = "3s"
+  cmd = "echo 󰖨 $(($(brightnessctl get) * 100 / $(brightnessctl max)))%"
+}
+
+Poll "ram" {
+  initial = "initial value"
+  interval = "3s"
+  cmd = "/home/slib/dotfiles/conf/.config/ewwii/scripts/ram.sh" 
+}
+
+Poll "cpu" {
+  initial = "initial value"
+  interval = "3s"
+  cmd = "/home/slib/dotfiles/conf/.config/ewwii/scripts/cpu.sh" 
+}
+
+import "menus/power.nbcl" as power_menu
+
+Window "top-bar" {
+    monitor = 0
+    geometry = {
+      x = "0px"
+      y = "0px"
+      width = "1920px"
+      height = "30px"
+      anchor = "top center"
+    }
+    exclusive = true
+
+    Box {
+        class = "box"
+        hexpand = true
+        orientation = "h"
+        space_evenly = true
+
+        Box {
+            orientation = "h"
+            halign = "start"
+            space_evenly = false
+            spacing = 0
+
+            Button "rofi" {
+                label = "󰍉"
+                focusable = false
+                onclick = "rofi -show drun"
+            }
+            Button "wk1" {
+                label = "1"
+                focusable = false
+                onclick = "niri msg action focus-workspace 1"
+            }
+            Button "wk2" {
+                label = "2"
+                focusable = false
+                onclick = "niri msg action focus-workspace 2"
+            }
+            Button "wk3" {
+                label = "3"
+                focusable = false
+                onclick = "niri msg action focus-workspace 3"
+            }
+            Button "wk4" {
+                label = "4"
+                focusable = false
+                onclick = "niri msg action focus-workspace 4"
+            }
+            Button "wk5" {
+                label = "5"
+                focusable = false
+                onclick = "niri msg action focus-workspace 5"
+            }
+            Button "wk6" {
+                label = "6"
+                focusable = false
+                onclick = "niri msg action focus-workspace 6"
+            }
+            Button "wk7" {
+                label = "7"
+                focusable = false
+                onclick = "niri msg action focus-workspace 7"
+            }
+            Button "wk8" {
+                label = "8"
+                focusable = false
+                onclick = "niri msg action focus-workspace 8"
+            }
+            Button "wk9" {
+                label = "9"
+                focusable = false
+                onclick = "niri msg action focus-workspace 9"
+            }
+            Button "wk10" {
+                label = "10"
+                focusable = false
+                onclick = "niri msg action focus-workspace 10"
+            }
+
+
+        }
+
+        Label "time" {
+            halign = "center"
+            text = global("clock")
+        }
+
+        Box {
+            orientation = "h"
+            halign = "end"
+            space_evenly = false
+
+            Label {
+                class = "info"
+                hexpand = true
+                halign = "end"
+                text = global("music")
+            }
+
+            Label {
+                text = "|"
+            }
+
+             Label {
+                class = "info"
+                hexpand = true
+                halign = "end"
+                text = global("cpu")
+            }
+
+            Label {
+                text = "|"
+            }
+
+            Label {
+                class = "info"
+                hexpand = true
+                halign = "end"
+                text = global("ram")
+            }
+
+            Label {
+                text = "|"
+            }
+
+            Label {
+                class = "info"
+                hexpand = true
+                halign = "end"
+                text = global("bright")
+            }
+
+            Label {
+                text = "|"
+            }
+
+            Label "bat_label" {
+                class = "info"
+                hexpand = true
+                halign = "end"
+                text = "..."
+            }
+
+            Button {
+                class = "info-pw"
+                hexpand = true
+                halign = "end"
+                width = "10px"
+                label = "⏻"
+                onclick = "~/.local/bin/ewwii open power_menu"
+            }
+        }
+    }
+}

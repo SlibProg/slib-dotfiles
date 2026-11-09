@@ -1,0 +1,23 @@
+{
+	"name": "Morewal",
+	"author": "Morewal",
+	"colors": {
+		"ui": "{background}",
+		"back": "{background}",
+		"dark": "{background}",
+		"border": "{foreground}",
+		"selected": "{color2}",
+		"button": "{background}",
+		"bright_ui": "{background}",
+		"accent": "{color2}",
+		"frame": "{background}",
+		"text": "{color12}",
+		"light": "{color14}",
+		"accent_text": "{color13}",
+		"bright_ui_text": "{color15}",
+		"subtle_text": "{color14}",
+		"grid": "{color14}",
+		"wireframe": "{color14}",
+		"checkerboard": "{color2}"
+	}
+}

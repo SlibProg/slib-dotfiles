@@ -1,0 +1,78 @@
+* {
+    all: unset;
+}
+
+.box {
+    padding: 0;
+    font-family: 'JetBrainsMono Nerd Font', sans-serif;
+    font-size: 15.2px;
+    color:#c2c6c6;
+    background: #0c1e1d;
+}
+
+.info {
+    padding: 0 8px;
+}
+
+.box > label {
+    padding-right: 8px;
+}
+
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.pw-menu {
+    background: #0c1e1d;
+    border: 2px solid #c2c6c6;
+    border-radius: 0px;
+    padding: 16px;
+    color: #c2c6c6;
+    font-size: 15.2px;
+}
+
+.power-btn {
+    color:#c2c6c6;
+    background-color: transparent;
+    padding: 12px 20px;
+    border-radius: 0px;
+    min-width: 80px;
+}
+
+.power-btn:hover {
+    background-color: #241c3a;
+    color: #89b4fa;
+}
+
+.power-btn:active {
+    background-color: #f38ba8;
+    color: #0c1e1d;
+}
+
+.power-btn box label:first-child {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+button {
+    color:#c2c6c6;
+    background-color: transparent;
+    padding: 6px;
+    min-width: 0;
+    min-height: 0;
+    border-radius: 0;
+}
+
+button:hover {
+    background-color: #241c3a;
+}
+
+button.active {
+    background-color: #89b4fa;
+    color: #0c1e1d;
+}
+
+button:active {
+    background-color: #f38ba8;
+    color: #0c1e1d;
+}

@@ -1,0 +1,69 @@
+:root {
+  --window-bg-color: #021a1a;
+  --window-fg-color: #ebebeb;
+  --view-bg-color: #021a1a;
+  --view-fg-color: #ebebeb;
+  --headerbar-bg-color: #0c2424;
+  --headerbar-backdrop-color: #0c2424;
+  --headerbar-fg-color: #ebebeb;
+  --popover-bg-color: #021a1a;
+  --popover-fg-color: #ebebeb;
+  --dialog-bg-color: var(--popover-bg-color);
+  --dialog-fg-color: var(--popover-fg-color);
+  --card-bg-color: #122a2a;
+  --card-fg-color: #ebebeb;
+  --sidebar-bg-color: #000a0a;
+  --sidebar-fg-color: #ebebeb;
+  --sidebar-backdrop-color: var(--sidebar-bg-color);
+  --sidebar-border-color: #0c2424;
+  --secondary-sidebar-bg-color: var(--sidebar-bg-color);
+  --secondary-sidebar-fg-color: var(--sidebar-fg-color);
+  --secondary-sidebar-backdrop-color: var(--sidebar-backdrop-color);
+  --secondary-sidebar-border-color: var(--sidebar-border-color);
+  --blue-1: #68f3f3;
+  --blue-2: #42def0;
+  --green-1: #7ce07b;
+  --yellow-1: #7ce07b;
+  --red-1: #7ce07b;
+  --purple-1: #68f3f3;
+  --purple-2: #42def0;
+  --orange-1: #7ce07b;
+  --brown-1: #4f7272;
+  --light-1: #dde4e4;
+  --light-5: #7e939a;
+  --dark-1: #3f5050;
+}
+toast {
+  background-color: var(--window-bg-color);
+  color: var(--window-fg-color);
+}
+.inline {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+windowcontrols.start:not(.rewaita-display) > button.minimize > image {
+    color: var(--yellow-1);
+}
+
+windowcontrols.start:not(.rewaita-display) > button.maximize > image {
+    color: var(--green-1);
+}
+
+windowcontrols.start:not(.rewaita-display) > button.close > image {
+    color: var(--red-1);
+}
+
+windowcontrols.end:not(.rewaita-display) > button.minimize > image {
+    color: var(--yellow-1);
+}
+
+windowcontrols.end:not(.rewaita-display) > button.maximize > image {
+    color: var(--green-1);
+}
+
+windowcontrols.end:not(.rewaita-display) > button.close > image {
+    color: var(--red-1);
+}
+
+@define-color accent_bg_color #68f3f3;
+@define-color accent_fg_color #222222;

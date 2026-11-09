@@ -1,0 +1,91 @@
+window {
+    margin: 0px;
+    background-color: {background};
+    font-family: "Noto Sans", sans-serif;
+    font-size: 14px;
+    animation: slideIn 0.3s ease-in-out both;
+}
+
+@keyframes slideIn {
+  0% {
+     opacity: 0;
+  }
+
+  100% {
+     opacity: 1;
+  }
+}
+
+#outer-box {
+    margin: 5px;
+    padding: 10px;
+    background-color: {foreground};
+    animation: slideIn 0.3s ease-in-out both;
+}
+
+#input {
+    margin: 5px;
+    padding: 8px 12px;
+    color: {color1};
+    background-color: {foreground};
+    text-shadow: none;
+    border: none;
+    border-radius: 0px;
+    animation: slideIn 0.3s ease-in-out both;
+}
+
+/* Hides the missing/empty search icon space so the cursor sits cleanly */
+#input image {
+    background-color: transparent;
+    color: transparent;
+    text-shadow: none;
+    background-image: none;
+    -gtk-icon-transform: scale(0);
+}
+
+#inner-box {
+    margin: 5px;
+    padding: 5px;
+    background-color: transparent;
+    animation: slideIn 0.3s ease-in-out both;
+}
+
+#scroll {
+    margin: 0px;
+    padding: 0px;
+}
+
+#expander-box {
+    background-color: transparent;
+    animation: slideIn 0.3s ease-in-out both;
+}
+
+/* Added vertical padding to center the text nicely next to the icons */
+#entry {
+    padding: 6px 8px;
+}
+
+#text {
+    margin: 0px 5px;
+    color: {color1};
+    animation: slideIn 0.3s ease-in-out both;
+}
+
+#entry:nth-child(even) {
+    background-color: {background}50;
+}
+
+#entry:selected {
+    background-color: {color4};
+    color: {background};
+}
+
+#text:selected {
+    color: {color2};
+    font-weight: bold;
+    animation: slideIn 0.3s ease-in-out both;
+}
+
+#img {
+    margin-right: 10px;
+}
